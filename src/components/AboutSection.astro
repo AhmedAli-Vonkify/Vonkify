@@ -1,0 +1,87 @@
+---
+// Brief about section for homepage
+---
+
+<section id="about" class="section-light dark:section-dark py-24 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+      <!-- Photo side -->
+      <div class="reveal-left order-2 lg:order-1">
+        <div class="relative max-w-sm mx-auto lg:mx-0">
+          <!-- Photo placeholder -->
+          <div class="aspect-square rounded-2xl bg-gradient-to-br from-navy-light to-navy border border-white/10 flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 opacity-20" style="background: radial-gradient(circle at 30% 30%, #FF6B00, transparent 60%), radial-gradient(circle at 70% 70%, #FFB800, transparent 60%);" />
+            <div class="text-center relative z-10">
+              <div class="text-7xl mb-4">👨‍💻</div>
+              <p class="text-sm text-cool-gray font-mono">// professional photo coming soon</p>
+            </div>
+          </div>
+
+          <!-- Floating stats card -->
+          <div class="absolute -bottom-5 -right-5 bg-navy border border-primary/20 rounded-xl px-5 py-4 shadow-2xl shadow-black/30">
+            <div class="text-2xl font-bold gradient-text">10+</div>
+            <div class="text-xs text-cool-gray mt-0.5">Years of Experience</div>
+          </div>
+
+          <!-- Location pill -->
+          <div class="absolute -top-4 -left-4 flex items-center gap-2 bg-navy border border-white/10 rounded-full px-4 py-2 text-xs font-medium text-text-light shadow-xl">
+            <span class="text-base">🇳🇱</span>
+            Rotterdam, Netherlands
+          </div>
+        </div>
+      </div>
+
+      <!-- Text side -->
+      <div class="reveal-right order-1 lg:order-2">
+        <div class="inline-flex items-center gap-2 mb-5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono">
+          // About Me
+        </div>
+
+        <h2 class="section-heading text-near-black dark:text-text-light mb-6">
+          About <span class="gradient-text">Ahmed</span>
+        </h2>
+
+        <div class="space-y-4 text-cool-gray leading-relaxed mb-8">
+          <p>
+            I'm a Senior Software Engineer with over <strong class="text-near-black dark:text-text-light">10 years</strong> of experience
+            building enterprise-grade solutions. Based in <strong class="text-near-black dark:text-text-light">Rotterdam, Netherlands</strong>,
+            I specialize in bridging cutting-edge AI technology with robust software architecture.
+          </p>
+          <p>
+            Currently at <strong class="text-near-black dark:text-text-light">iO Digital</strong>, I build AI-powered workspaces using
+            Azure OpenAI, Amazon Bedrock, and Google Gemini. My passion lies in making complex technology accessible
+            and delivering solutions that create real business value.
+          </p>
+          <p>
+            As a full-stack developer, I bring both backend depth (.NET, C#, cloud architecture) and frontend polish
+            (Angular, React) to every project — plus a strong commitment to clean code, TDD, and knowledge sharing.
+          </p>
+        </div>
+
+        <!-- Key attributes -->
+        <div class="grid grid-cols-2 gap-3 mb-8">
+          {
+            [
+              { icon: '🧠', label: 'AI Integration Expert' },
+              { icon: '🏗️', label: 'Solution Architect' },
+              { icon: '🎓', label: 'Certified Scrum Master' },
+              { icon: '🇳🇱', label: 'NL-based, EU Auth.' },
+            ].map((attr) => (
+              <div class="flex items-center gap-2.5 text-sm">
+                <span class="text-xl">{attr.icon}</span>
+                <span class="text-near-black dark:text-cool-gray font-medium">{attr.label}</span>
+              </div>
+            ))
+          }
+        </div>
+
+        <a href="/about" class="btn-outline">
+          Read More About Me
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

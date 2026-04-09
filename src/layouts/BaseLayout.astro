@@ -1,0 +1,129 @@
+---
+import { SITE } from '../utils/constants';
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = SITE.title,
+  description = SITE.description,
+  image = SITE.defaultOgImage,
+  noindex = false,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, SITE.url);
+const ogImageURL = new URL(image, SITE.url);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="freelance .NET developer, AI integration, Azure OpenAI, C# developer, fullstack developer, Netherlands, ZZP, RAG, senior software engineer, vonkify" />
+    <meta name="author" content={SITE.author} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:site_name" content="Vonkify" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Sora:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Theme: prevent flash of wrong theme -->
+    <script is:inline>
+      (function () {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (stored === 'dark' || (!stored && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+
+    <!-- Schema.org JSON-LD -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ProfessionalService',
+        name: 'Vonkify',
+        url: 'https://vonkify.nl',
+        description: 'Senior .NET & AI Engineering — Freelance Software Development',
+        founder: {
+          '@type': 'Person',
+          name: 'Ahmed Ali',
+          jobTitle: 'Senior Software Engineer',
+          url: 'https://vonkify.nl/about',
+          sameAs: [
+            'https://www.linkedin.com/in/ahmed-ali-vonkify',
+            'https://github.com/AhmedSameh2020',
+          ],
+          knowsAbout: ['C#', '.NET', 'Azure OpenAI', 'AI Integration', 'Angular', 'React', 'Cloud Architecture'],
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Rotterdam',
+            addressCountry: 'NL',
+          },
+        },
+        areaServed: { '@type': 'Country', name: 'Netherlands' },
+      })}
+    />
+  </head>
+  <body class="bg-off-white dark:bg-navy text-near-black dark:text-text-light font-sans antialiased">
+    <slot />
+
+    <!-- Scroll reveal observer -->
+    <script is:inline>
+      (function () {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+              }
+            });
+          },
+          { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+        );
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach((el) =>
+          observer.observe(el)
+        );
+      })();
+    </script>
+  </body>
+</html>

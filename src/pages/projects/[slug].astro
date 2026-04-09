@@ -1,0 +1,48 @@
+---
+import { getCollection, render } from 'astro:content';
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const { title, company, period, role, summary, tech, category, achievements } = project.data;
+---
+
+<ProjectLayout
+  title={title}
+  company={company}
+  period={period}
+  role={role}
+  summary={summary}
+  tech={tech}
+  category={category}
+>
+  <!-- Achievements block -->
+  {
+    achievements && achievements.length > 0 && (
+      <div class="mb-10 p-6 bg-primary/5 border border-primary/15 rounded-xl not-prose">
+        <h2 class="text-lg font-bold text-near-black dark:text-text-light mb-4 flex items-center gap-2">
+          <span class="text-primary">⚡</span> Key Achievements
+        </h2>
+        <ul class="space-y-2">
+          {achievements.map((item) => (
+            <li class="flex items-start gap-3 text-sm text-cool-gray">
+              <span class="text-primary mt-0.5 flex-shrink-0">✓</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+
+  <!-- Markdown content -->
+  <Content />
+</ProjectLayout>

@@ -1,0 +1,94 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../utils/constants';
+
+export interface Props {
+  title: string;
+  company: string;
+  period: string;
+  role: string;
+  summary: string;
+  tech: string[];
+  category: string;
+}
+
+const { title, company, period, role, summary, tech, category } = Astro.props;
+const pageTitle = `${title} — ${company} | ${SITE.name}`;
+---
+
+<BaseLayout title={pageTitle} description={summary}>
+  <Header />
+
+  <main class="pt-20">
+    <!-- Project Hero -->
+    <section class="section-dark py-20 px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="mb-6">
+          <a
+            href="/projects"
+            class="inline-flex items-center gap-2 text-sm text-cool-gray hover:text-primary transition-colors"
+          >
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Projects
+          </a>
+        </div>
+
+        <div class="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-mono">
+          {category}
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-bold text-text-light mb-4">{title}</h1>
+
+        <div class="flex flex-wrap gap-4 mb-6 text-sm text-cool-gray">
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+            {company}
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            {period}
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+            {role}
+          </span>
+        </div>
+
+        <p class="text-lg text-cool-gray leading-relaxed mb-8">{summary}</p>
+
+        <!-- Tech stack -->
+        <div class="flex flex-wrap gap-2">
+          {tech.map((t) => <span class="tech-badge">{t}</span>)}
+        </div>
+      </div>
+    </section>
+
+    <!-- Project content -->
+    <section class="section-light dark:section-dark py-16 px-4">
+      <div class="max-w-4xl mx-auto prose prose-lg dark:prose-invert max-w-none">
+        <slot />
+      </div>
+    </section>
+
+    <!-- Back to projects CTA -->
+    <section class="section-dark py-16 px-4 text-center">
+      <p class="text-cool-gray mb-6">Interested in working together?</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary">Let's Talk</a>
+        <a href="/projects" class="btn-secondary">View All Projects</a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

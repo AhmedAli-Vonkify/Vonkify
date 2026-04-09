@@ -1,0 +1,80 @@
+---
+import { EXPERIENCE } from '../utils/constants';
+---
+
+<section id="experience" class="section-dark py-24 px-4">
+  <div class="max-w-4xl mx-auto">
+    <!-- Heading -->
+    <div class="text-center mb-16 reveal">
+      <div class="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono">
+        // Career Journey
+      </div>
+      <h2 class="section-heading text-text-light mb-4">Experience</h2>
+      <p class="text-cool-gray max-w-xl mx-auto">
+        10+ years building enterprise software across healthcare, energy, construction, finance, and AI sectors.
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative">
+      <!-- Vertical line -->
+      <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-primary/40 to-transparent -translate-x-1/2 hidden sm:block"></div>
+
+      <div class="space-y-8">
+        {
+          EXPERIENCE.map((job, i) => {
+            const isEven = i % 2 === 0;
+            return (
+              <div class={`relative flex gap-6 sm:gap-0 reveal ${isEven ? 'sm:flex-row' : 'sm:flex-row-reverse'}`}>
+                {/* Content card */}
+                <div class={`flex-1 ${isEven ? 'sm:pr-10 sm:text-right' : 'sm:pl-10'}`}>
+                  <div class="glass-card rounded-xl p-5 group">
+                    {/* Current badge */}
+                    {job.current && (
+                      <div class="inline-flex items-center gap-1.5 mb-3 text-xs font-semibold text-success bg-success/10 border border-success/25 px-2.5 py-1 rounded-full">
+                        <span class="w-1.5 h-1.5 bg-success rounded-full animate-pulse" />
+                        Current Position
+                      </div>
+                    )}
+
+                    {/* Period */}
+                    <div class="text-xs font-mono text-primary/80 mb-2">{job.period}</div>
+
+                    {/* Title & Company */}
+                    <h3 class="text-base font-bold text-text-light mb-0.5 group-hover:text-primary transition-colors">
+                      {job.title}
+                    </h3>
+                    <p class="text-sm font-semibold text-cool-gray mb-3">
+                      {job.url !== '#' ? (
+                        <a href={job.url} target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">
+                          {job.company}
+                        </a>
+                      ) : (
+                        job.company
+                      )}
+                      <span class="font-normal ml-1">· {job.location}</span>
+                    </p>
+
+                    {/* Description */}
+                    <p class="text-sm text-cool-gray leading-relaxed mb-3">{job.description}</p>
+
+                    {/* Highlight */}
+                    <p class="text-xs font-mono text-primary/70">{job.highlight}</p>
+                  </div>
+                </div>
+
+                {/* Dot (desktop) */}
+                <div class="hidden sm:flex absolute left-1/2 top-6 -translate-x-1/2 z-10">
+                  <div class="timeline-dot" />
+                </div>
+
+                {/* Spacer for opposite side */}
+                <div class="hidden sm:block flex-1" />
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+  </div>
+</section>

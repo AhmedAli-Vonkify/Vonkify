@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE, TECH_CATEGORIES } from '../utils/constants';
+---
+
+<BaseLayout
+  title="About Ahmed Ali — Senior .NET & AI Engineer | Vonkify"
+  description="Learn about Ahmed Ali — a Senior Software Engineer from Rotterdam with 10+ years of enterprise experience in .NET, AI integration, Angular, React, and cloud architecture."
+>
+  <Header />
+
+  <main class="pt-20">
+    <!-- Hero -->
+    <section class="section-dark py-20 px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 mb-5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono">
+          // About Me
+        </div>
+        <h1 class="section-heading text-text-light mb-4">Ahmed Ali</h1>
+        <p class="text-xl text-cool-gray">Senior Software Engineer · AI Integration Specialist · Freelancer</p>
+      </div>
+    </section>
+
+    <!-- Bio section -->
+    <section class="section-light dark:section-dark py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <!-- Photo -->
+          <div class="lg:col-span-1 reveal-left">
+            <div class="sticky top-28">
+              <!-- Photo placeholder -->
+              <div class="aspect-square rounded-2xl bg-gradient-to-br from-navy-light to-navy border border-white/10 flex items-center justify-center mb-6 relative overflow-hidden">
+                <div class="absolute inset-0 opacity-20" style="background: radial-gradient(circle at 30% 30%, #FF6B00, transparent 60%);" />
+                <div class="text-center relative z-10">
+                  <div class="text-8xl mb-3">👨‍💻</div>
+                  <p class="text-xs text-cool-gray font-mono px-4">// photo coming soon</p>
+                </div>
+              </div>
+
+              <!-- Quick facts -->
+              <div class="space-y-3 bg-white dark:bg-navy-light/50 border border-gray-100 dark:border-white/8 rounded-xl p-5">
+                <h3 class="text-sm font-bold text-near-black dark:text-text-light uppercase tracking-wide mb-4">Quick Facts</h3>
+                {[
+                  { icon: '📍', label: 'Location', value: 'Rotterdam, Netherlands' },
+                  { icon: '🌐', label: 'Languages', value: 'English (Excellent) · Dutch (A2)' },
+                  { icon: '🎓', label: 'Education', value: 'BSc Commerce + ITI Diploma' },
+                  { icon: '🗓️', label: 'Experience', value: '10+ Years' },
+                  { icon: '🤝', label: 'Work Style', value: 'Remote & Hybrid in NL' },
+                  { icon: '🏅', label: 'Certifications', value: 'Certified Scrum Master' },
+                ].map((fact) => (
+                  <div class="flex items-start gap-2.5">
+                    <span class="text-base mt-0.5">{fact.icon}</span>
+                    <div>
+                      <p class="text-xs text-cool-gray">{fact.label}</p>
+                      <p class="text-sm font-medium text-near-black dark:text-text-light">{fact.value}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <!-- Download CV -->
+              <div class="mt-4">
+                <a href="/ahmed-ali-cv.pdf" download class="btn-primary w-full justify-center">
+                  Download CV (PDF)
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="lg:col-span-2 space-y-10 reveal-right">
+            <!-- My story -->
+            <div>
+              <h2 class="text-2xl font-bold text-near-black dark:text-text-light mb-5 flex items-center gap-2">
+                <span class="text-primary">//</span> My Journey
+              </h2>
+              <div class="space-y-4 text-cool-gray leading-relaxed">
+                <p>
+                  Born in Egypt, I completed my BSc in Commerce at Mansoura University (2008–2012) before pivoting to follow my true passion: software engineering. I earned a Professional Diploma in Software Engineering from the <strong class="text-near-black dark:text-text-light">Information Technology Institute (ITI)</strong> — accredited by Egypt's Ministry of Communications — in 2014-2015.
+                </p>
+                <p>
+                  Since then, I've spent 10+ years building enterprise software across healthcare, energy, construction, finance, and digital sectors. My journey brought me to <strong class="text-near-black dark:text-text-light">the Netherlands</strong>, where I've worked with some of the country's most notable companies.
+                </p>
+                <p>
+                  Today at <strong class="text-near-black dark:text-text-light">iO Digital</strong>, I build AI-powered platforms using Azure OpenAI, Amazon Bedrock, and Google Gemini — including enterprise middleware for <strong class="text-near-black dark:text-text-light">Eneco</strong>, one of the Netherlands' leading energy companies. I'm now transitioning to <strong class="text-near-black dark:text-text-light">full freelance</strong> to bring this expertise directly to clients.
+                </p>
+              </div>
+            </div>
+
+            <!-- Philosophy -->
+            <div>
+              <h2 class="text-2xl font-bold text-near-black dark:text-text-light mb-5 flex items-center gap-2">
+                <span class="text-primary">//</span> My Philosophy
+              </h2>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { icon: '🧹', title: 'Clean Code First', desc: 'Code is read far more than it\'s written. I prioritize clarity, SOLID principles, and maintainability.' },
+                  { icon: '🧪', title: 'Test-Driven Development', desc: 'TDD is not just a practice — it\'s a design philosophy that leads to better architecture.' },
+                  { icon: '📚', title: 'Continuous Learning', desc: 'The tech landscape evolves rapidly. I actively explore AI, cloud, and emerging patterns.' },
+                  { icon: '🤝', title: 'Knowledge Sharing', desc: 'Great teams grow together. I mentor, pair-program, and run internal training sessions.' },
+                ].map((item) => (
+                  <div class="bg-white dark:bg-navy-light/40 border border-gray-100 dark:border-white/8 rounded-xl p-5">
+                    <div class="text-2xl mb-3">{item.icon}</div>
+                    <h3 class="font-bold text-near-black dark:text-text-light mb-2">{item.title}</h3>
+                    <p class="text-sm text-cool-gray leading-relaxed">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <!-- Current focus -->
+            <div>
+              <h2 class="text-2xl font-bold text-near-black dark:text-text-light mb-5 flex items-center gap-2">
+                <span class="text-primary">//</span> Current Focus
+              </h2>
+              <div class="space-y-3">
+                {[
+                  'Building production-grade AI applications with RAG, LLM chaining, and agent patterns',
+                  'Cloud-native .NET architectures on Azure with Terraform IaC',
+                  'Multi-provider LLM integrations (Azure OpenAI, Bedrock, Gemini)',
+                  'Contributing to the NL freelance tech market as a senior AI/backend specialist',
+                ].map((focus) => (
+                  <div class="flex items-start gap-3 text-sm text-cool-gray">
+                    <span class="text-primary mt-1 flex-shrink-0">▸</span>
+                    {focus}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <!-- Fun facts -->
+            <div>
+              <h2 class="text-2xl font-bold text-near-black dark:text-text-light mb-5 flex items-center gap-2">
+                <span class="text-primary">//</span> Beyond the Code
+              </h2>
+              <div class="flex flex-wrap gap-3">
+                {[
+                  '🎮 Unity 3D & VR development',
+                  '⛓️ Blockchain (Ethereum, Nethereum)',
+                  '🏗️ Architecture enthusiast',
+                  '🇳🇱 Learning Dutch',
+                  '🔋 Energy tech fan',
+                  '📡 AR/VR explorer',
+                ].map((fact) => (
+                  <span class="text-sm px-4 py-2 bg-white dark:bg-navy-light/40 border border-gray-100 dark:border-white/8 rounded-full text-cool-gray">
+                    {fact}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-dark py-16 px-4 text-center">
+      <h2 class="text-2xl font-bold text-text-light mb-4">Ready to work together?</h2>
+      <p class="text-cool-gray mb-8 max-w-xl mx-auto">
+        I'm available for freelance projects. Let's discuss how I can add value to your team.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary">Get In Touch</a>
+        <a href="/cv" class="btn-secondary">View My CV</a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,70 @@
+---
+export interface Props {
+  slug: string;
+  title: string;
+  company: string;
+  period: string;
+  summary: string;
+  tech: string[];
+  category: string;
+  featured?: boolean;
+}
+
+const { slug, title, company, period, summary, tech, category, featured = false } = Astro.props;
+
+const categoryColors: Record<string, string> = {
+  'AI & ML': 'text-accent border-accent/30 bg-accent/8',
+  'Backend': 'text-blue-400 border-blue-400/30 bg-blue-400/8',
+  'Full-Stack': 'text-purple-400 border-purple-400/30 bg-purple-400/8',
+  'Cloud': 'text-cyan-400 border-cyan-400/30 bg-cyan-400/8',
+  'Blockchain': 'text-green-400 border-green-400/30 bg-green-400/8',
+  'Healthcare': 'text-pink-400 border-pink-400/30 bg-pink-400/8',
+};
+
+const categoryStyle = categoryColors[category] ?? 'text-primary border-primary/30 bg-primary/8';
+---
+
+<article class="glass-card rounded-2xl p-6 flex flex-col h-full group">
+  <!-- Top row: category + period -->
+  <div class="flex items-center justify-between mb-4">
+    <span class={`inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded-full border ${categoryStyle}`}>
+      {category}
+    </span>
+    <span class="text-xs text-cool-gray font-mono">{period}</span>
+  </div>
+
+  <!-- Company -->
+  <p class="text-xs text-primary font-semibold uppercase tracking-wider mb-2">{company}</p>
+
+  <!-- Title -->
+  <h3 class="text-lg font-bold text-text-light mb-3 group-hover:text-primary transition-colors leading-snug">
+    {title}
+  </h3>
+
+  <!-- Summary -->
+  <p class="text-sm text-cool-gray leading-relaxed mb-5 flex-1">{summary}</p>
+
+  <!-- Tech tags (top 5) -->
+  <div class="flex flex-wrap gap-1.5 mb-5">
+    {tech.slice(0, 5).map((t) => <span class="tech-badge">{t}</span>)}
+    {tech.length > 5 && <span class="tech-badge">+{tech.length - 5}</span>}
+  </div>
+
+  <!-- Link -->
+  <a
+    href={`/projects/${slug}`}
+    class="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-accent transition-colors group/link mt-auto"
+    aria-label={`View case study for ${title}`}
+  >
+    View Case Study
+    <svg
+      class="w-4 h-4 transition-transform group-hover/link:translate-x-1"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      stroke-width="2"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+    </svg>
+  </a>
+</article>
