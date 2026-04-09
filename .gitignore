@@ -24,3 +24,9 @@ pnpm-debug.log*
 
 # Windows
 Thumbs.db
+
+# local git config
+.gitconfig-local
+
+# Vercel output
+.vercel/
