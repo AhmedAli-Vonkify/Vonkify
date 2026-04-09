@@ -4,7 +4,9 @@ company: "iO Digital"
 companyUrl: "https://www.iodigital.com"
 period: "July 2024 – Present"
 role: "Software Engineer / AI Integration Lead"
+roleNl: "Software Engineer / AI-integratieleider"
 summary: "Building enterprise AI assistant workspaces for iO Digital powered by Azure OpenAI, Amazon Bedrock, and Google Gemini — enabling teams to leverage multiple LLM providers in a unified platform."
+summaryNl: "Enterprise AI-assistent werkruimten gebouwd voor iO Digital, aangedreven door Azure OpenAI, Amazon Bedrock en Google Gemini — zodat teams meerdere LLM-providers kunnen benutten op één unified platform."
 tech: ["Azure OpenAI", "Amazon Bedrock", "Google Gemini", "Node.js", "React", "TypeScript", "Docker", "Terraform", "MongoDB", "LibreChat", "YAML", "RESTful APIs"]
 featured: true
 featuredOrder: 1
@@ -16,6 +18,12 @@ achievements:
   - "Developed React/TypeScript frontend for intuitive AI workspace management"
   - "Implemented provider-agnostic architecture enabling hot-swapping between LLM backends"
   - "Reduced AI response latency by 35% through smart caching and streaming optimizations"
+achievementsNl:
+  - "3 grote LLM-providers (Azure OpenAI, Bedrock, Gemini) geïntegreerd in een unified API-laag"
+  - "Cloud-native infrastructuur gebouwd met Terraform en Docker voor reproduceerbare deployments"
+  - "React/TypeScript frontend ontwikkeld voor intuïtief AI-werkruimtebeheer"
+  - "Provider-agnostische architectuur geïmplementeerd voor hot-swapping tussen LLM-backends"
+  - "AI-responslatentie met 35% verminderd door slimme caching en streaming-optimalisaties"
 ---
 
 ## The Challenge

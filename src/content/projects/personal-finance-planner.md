@@ -4,7 +4,9 @@ company: "Omniplan"
 companyUrl: "https://omniplan.nl"
 period: "September 2020 – September 2021"
 role: "Software Engineer"
+roleNl: "Software Engineer"
 summary: "Financial planning and calculation tool for businesses in the financial sector. Used by financial advisors to conduct mortgage analyses, retirement planning, and comprehensive financial situation assessments."
+summaryNl: "Financiële plannings- en berekeningshulpmiddel voor de financiële sector. Gebruikt door financieel adviseurs voor hypotheekanalyses, pensioenplanning en uitgebreide beoordelingen van financiële situaties."
 tech: ["C#", "ASP.NET Core", "Angular", "TypeScript", "DDD", "Onion Architecture", "TDD", "MediatR", "Azure Table Storage", "NgRx", "RxJS", "Nrwl/Nx", "D3.js", "Cypress", "SOLID"]
 featured: false
 category: "Full-Stack"
@@ -14,6 +16,11 @@ achievements:
   - "Implemented D3.js interactive visualizations for financial projection charts"
   - "Achieved 80%+ test coverage with Cypress E2E and unit tests"
   - "Monorepo architecture with Nrwl/Nx for shared business logic"
+achievementsNl:
+  - "Complexe financiële berekeningsmotor gebouwd voor hypotheek-, belasting- en pensioenscenario's"
+  - "D3.js interactieve visualisaties geïmplementeerd voor financiële projectiegrafieken"
+  - "80%+ testdekking bereikt met Cypress E2E en unit tests"
+  - "Monorepo-architectuur met Nrwl/Nx voor gedeelde bedrijfslogica"
 ---
 
 ## Overview

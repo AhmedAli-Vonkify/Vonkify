@@ -4,7 +4,9 @@ company: "ICT Group / MediTop"
 companyUrl: "https://www.ictgroup.eu"
 period: "September 2019 – September 2020"
 role: "C# Developer"
+roleNl: "C# Developer"
 summary: "Electronic Patient Dossier (EPD) desktop application for safely storing and viewing digital medical documents including X-ray images, scans, MRI, and video captures for medical professionals in Dutch healthcare."
+summaryNl: "Elektronisch Patiëntendossier (EPD) desktopapplicatie voor het veilig opslaan en bekijken van digitale medische documenten, waaronder röntgenfoto's, scans, MRI en video-opnames voor medische professionals in de Nederlandse gezondheidszorg."
 tech: ["C#", "WPF", "MVVM", "SQL Server", "Entity Framework", "LeadTools", "HL7", "DICOM"]
 featured: false
 category: "Healthcare"
@@ -14,6 +16,11 @@ achievements:
   - "HL7 integration for patient data exchange with hospital information systems"
   - "Built secure document management with audit logging for compliance"
   - "Improved image loading performance by 40% through progressive rendering"
+achievementsNl:
+  - "DICOM-beeldviewer geïmplementeerd voor röntgenfoto's en scans via LeadTools"
+  - "HL7-integratie voor patiëntgegevensuitwisseling met ziekenhuisinformatiesystemen"
+  - "Veilig documentbeheer gebouwd met auditlogboek voor compliance"
+  - "Beeldlaadprestaties met 40% verbeterd via progressieve rendering"
 ---
 
 ## Overview

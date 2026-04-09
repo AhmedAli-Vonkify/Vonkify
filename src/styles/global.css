@@ -21,6 +21,16 @@
   --font-brand: 'Sora', 'Darker Grotesque', sans-serif;
 }
 
+/* ─── Light-mode: flip colour tokens so all Tailwind utilities adapt ─── */
+html:not(.dark) {
+  --color-navy: #F0F4F8;
+  --color-navy-light: #FFFFFF;
+  --color-text-light: #1E293B;
+  --color-cool-gray: #64748B;
+  --color-off-white: #FFFFFF;
+  --color-near-black: #0F172A;
+}
+
 /* Base */
 html {
   scroll-behavior: smooth;
@@ -40,7 +50,7 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0A1628;
+  background: var(--color-navy, #0A1628);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -118,6 +128,16 @@ html {
   color: #F1F5F9;
 }
 
+html:not(.dark) .section-dark {
+  background-color: #F0F4F8;
+  color: #1E293B;
+}
+
+html:not(.dark) .section-light {
+  background-color: #FFFFFF;
+  color: #0F172A;
+}
+
 /* Glass morphism card */
 .glass-card {
   background: rgba(255, 255, 255, 0.04);
@@ -131,6 +151,18 @@ html {
   border-color: rgba(255, 107, 0, 0.45);
   box-shadow: 0 8px 30px rgba(255, 107, 0, 0.12), 0 0 0 1px rgba(255, 107, 0, 0.1);
   transform: translateY(-3px);
+}
+
+html:not(.dark) .glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(255, 107, 0, 0.15);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+html:not(.dark) .glass-card:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(255, 107, 0, 0.4);
+  box-shadow: 0 8px 30px rgba(255, 107, 0, 0.12);
 }
 
 /* Gradient text */
@@ -185,6 +217,16 @@ html {
   border-color: #FF6B00;
   color: #FF6B00;
   transform: translateY(-2px);
+}
+
+html:not(.dark) .btn-secondary {
+  color: #1E293B;
+  border-color: rgba(30, 41, 59, 0.25);
+}
+
+html:not(.dark) .btn-secondary:hover {
+  border-color: #FF6B00;
+  color: #FF6B00;
 }
 
 .btn-outline {
@@ -250,6 +292,18 @@ html {
   background: rgba(255, 107, 0, 0.08);
 }
 
+html:not(.dark) .filter-btn {
+  border-color: rgba(30, 41, 59, 0.2);
+  color: #64748B;
+}
+
+html:not(.dark) .filter-btn:hover,
+html:not(.dark) .filter-btn.active {
+  border-color: #FF6B00;
+  color: #FF6B00;
+  background: rgba(255, 107, 0, 0.08);
+}
+
 /* Section heading */
 .section-heading {
   font-size: clamp(2rem, 4vw, 3rem);
@@ -264,7 +318,7 @@ html {
   height: 14px;
   background: #FF6B00;
   border-radius: 50%;
-  border: 2px solid #0A1628;
+  border: 2px solid var(--color-navy, #0A1628);
   box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.3);
   position: relative;
   z-index: 2;
@@ -324,6 +378,7 @@ html {
   font-size: 15px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   outline: none;
+  appearance: auto;
 }
 
 .form-input::placeholder {
@@ -338,6 +393,126 @@ html {
 .form-input option {
   background: #1E293B;
   color: #F1F5F9;
+}
+
+/* Light mode form inputs */
+html:not(.dark) .form-input {
+  background: #FFFFFF;
+  border-color: rgba(30, 41, 59, 0.18);
+  color: #1E293B;
+}
+
+html:not(.dark) .form-input::placeholder {
+  color: #94A3B8;
+}
+
+html:not(.dark) .form-input:focus {
+  border-color: rgba(255, 107, 0, 0.5);
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+}
+
+html:not(.dark) .form-input option {
+  background: #FFFFFF;
+  color: #1E293B;
+}
+
+/* Project page prose typography */
+.project-prose h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text-light, #F1F5F9);
+  border-left: 3px solid #FF6B00;
+  padding-left: 0.875rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.project-prose h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #E08000;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+html:not(.dark) .project-prose h3 {
+  color: #CC7000;
+}
+
+.project-prose p {
+  color: var(--color-cool-gray, #94A3B8);
+  line-height: 1.85;
+  margin-bottom: 0.875rem;
+}
+
+.project-prose strong {
+  color: var(--color-text-light, #F1F5F9);
+  font-weight: 600;
+}
+
+.project-prose ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 1rem;
+}
+
+.project-prose ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  color: var(--color-cool-gray, #94A3B8);
+  padding: 0.3rem 0;
+  line-height: 1.7;
+}
+
+.project-prose ul li::before {
+  content: '▸';
+  color: #FF6B00;
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-size: 0.8rem;
+}
+
+.project-prose ol {
+  counter-reset: ol-counter;
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 1rem;
+}
+
+.project-prose ol li {
+  counter-increment: ol-counter;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--color-cool-gray, #94A3B8);
+  padding: 0.3rem 0;
+  line-height: 1.7;
+}
+
+.project-prose ol li::before {
+  content: counter(ol-counter) ".";
+  color: #FF6B00;
+  font-weight: 700;
+  flex-shrink: 0;
+  min-width: 1.2rem;
+}
+
+.project-prose code {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.8em;
+  background: rgba(255, 107, 0, 0.1);
+  color: #FF6B00;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 107, 0, 0.2);
+}
+
+.project-prose hr {
+  border: none;
+  border-top: 1px solid rgba(255, 107, 0, 0.15);
+  margin: 2rem 0;
 }
 
 /* Print styles for CV */

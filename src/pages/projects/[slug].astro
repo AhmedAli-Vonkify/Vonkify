@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 const { Content } = await render(project);
-const { title, company, period, role, summary, tech, category, achievements } = project.data;
+const { title, company, period, role, roleNl, summary, summaryNl, tech, category, achievements } = project.data;
 ---
 
 <ProjectLayout
@@ -20,29 +20,28 @@ const { title, company, period, role, summary, tech, category, achievements } = 
   company={company}
   period={period}
   role={role}
+  roleNl={roleNl}
   summary={summary}
+  summaryNl={summaryNl}
   tech={tech}
   category={category}
 >
-  <!-- Achievements block -->
-  {
-    achievements && achievements.length > 0 && (
-      <div class="mb-10 p-6 bg-primary/5 border border-primary/15 rounded-xl not-prose">
-        <h2 class="text-lg font-bold text-near-black dark:text-text-light mb-4 flex items-center gap-2">
-          <span class="text-primary">⚡</span> Key Achievements
-        </h2>
-        <ul class="space-y-2">
-          {achievements.map((item) => (
-            <li class="flex items-start gap-3 text-sm text-cool-gray">
-              <span class="text-primary mt-0.5 flex-shrink-0">✓</span>
-              {item}
-            </li>
-          ))}
-        </ul>
-      </div>
-    )
-  }
+  {achievements && achievements.length > 0 && (
+    <div class="not-prose mb-10 glass-card rounded-2xl p-6 border border-primary/20">
+      <h2 class="text-base font-bold text-text-light mb-4 flex items-center gap-2.5">
+        <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-primary/15 text-primary text-sm">⚡</span>
+        Key Achievements
+      </h2>
+      <ul class="space-y-2.5">
+        {achievements.map((item) => (
+          <li class="flex items-start gap-3 text-sm text-cool-gray leading-relaxed">
+            <span class="flex-shrink-0 mt-0.5 w-4 h-4 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary text-[10px] font-bold">✓</span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
 
-  <!-- Markdown content -->
   <Content />
 </ProjectLayout>

@@ -4,7 +4,9 @@ company: "Heijmans"
 companyUrl: "https://www.heijmans.nl"
 period: "September 2021 – September 2022"
 role: "Senior Developer / Full-Stack"
+roleNl: "Senior Developer / Full-Stack"
 summary: "Fine-grained authorization and user management system for Heijmans employees, providing single sign-on and role-based access control across multiple internal applications."
+summaryNl: "Gedetailleerd autorisatie- en gebruikersbeheersysteem voor Heijmans-medewerkers, met single sign-on en rolgebaseerde toegangscontrole voor meerdere interne applicaties."
 tech: ["C#", "ASP.NET Core", "Angular", "TypeScript", "MediatR", "Entity Framework Core", "SQL Server", "Microsoft Graph", "NgRx", "RxJS", "OAuth 2.0", "Swagger"]
 featured: false
 category: "Backend"
@@ -14,6 +16,11 @@ achievements:
   - "Microsoft Graph integration for Azure AD user and group synchronization"
   - "Fine-grained role-based access control preventing unauthorized data access"
   - "Clean API design with full Swagger documentation"
+achievementsNl:
+  - "Gecentraliseerd autorisatiesysteem gebouwd voor 3+ interne applicaties"
+  - "Microsoft Graph-integratie voor Azure AD gebruikers- en groepssynchronisatie"
+  - "Gedetailleerde rolgebaseerde toegangscontrole ter voorkoming van ongeautoriseerde datatoegang"
+  - "Clean API-ontwerp met volledige Swagger-documentatie"
 ---
 
 ## Overview

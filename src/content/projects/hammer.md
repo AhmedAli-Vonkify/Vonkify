@@ -4,7 +4,9 @@ company: "Heijmans"
 companyUrl: "https://www.heijmans.nl"
 period: "September 2021 – September 2022"
 role: "Senior Developer / Team Coach"
+roleNl: "Senior Developer / Teamcoach"
 summary: "Web application for presenting quality data regarding asphalt condition. Used by Heijmans to optimize asphalt maintenance schedules and detect anomalies early, preventing costly road deterioration."
+summaryNl: "Webapplicatie voor het presenteren van kwaliteitsdata over asfaltconditie. Gebruikt door Heijmans om onderhoudsschema's te optimaliseren en anomalieën vroegtijdig te detecteren, waardoor kostbare wegverslechtering wordt voorkomen."
 tech: ["C#", "ASP.NET Core", "Angular", "TypeScript", "DDD", "Onion Architecture", "TDD", "MediatR", "WCF", "Entity Framework Core", "SQL Server", "Terraform", "NgRx", "RxJS", "ECharts", "Azure Maps"]
 featured: false
 category: "Full-Stack"
@@ -14,6 +16,11 @@ achievements:
   - "Introduced ESLint and frontend code standards across the Angular codebase"
   - "Implemented interactive ECharts visualizations for asphalt condition trend analysis"
   - "Integrated with WCF services from legacy data collection systems"
+achievementsNl:
+  - "Vroegtijdige anomaliedetectie mogelijk gemaakt, waarmee noodreparatiekosten aanzienlijk daalden"
+  - "ESLint en frontend codestandaarden geïntroduceerd in de Angular codebase"
+  - "Interactieve ECharts-visualisaties geïmplementeerd voor trendanalyse van asfaltconditie"
+  - "Geïntegreerd met WCF-services van legacy dataverzamelingssystemen"
 ---
 
 ## The Challenge

@@ -4,7 +4,9 @@ company: "iO Digital / Eneco"
 companyUrl: "https://www.eneco.nl"
 period: "August 2022 – July 2024"
 role: "Software Engineer"
+roleNl: "Software Engineer"
 summary: "Built a high-performance middleware API platform for Eneco — one of the Netherlands' largest energy companies — serving as the integration backbone between Eneco's digital consumer products and backend systems."
+summaryNl: "High-performance middleware API platform gebouwd voor Eneco — één van de grootste energiebedrijven van Nederland — als integratieruggengraat tussen Eneco's digitale consumentenproducten en backendsystemen."
 tech: ["C#", "ASP.NET Core", ".NET 8", "Redis", "Fusion Cache", "Entity Framework Core", "SQL Server", "Azure Table Storage", "Azure Functions", "Azure DevOps", "Swagger", "SOLID", "Unit Testing", "Integration Testing"]
 featured: true
 featuredOrder: 2
@@ -16,6 +18,12 @@ achievements:
   - "Built robust integration testing suite achieving 85%+ code coverage"
   - "Implemented DDD and SOLID principles resulting in a maintainable, extensible codebase"
   - "Delivered critical integrations enabling Eneco's digital transformation roadmap"
+achievementsNl:
+  - "High-throughput middleware ontworpen voor miljoenen API-calls per maand"
+  - "Responstijden met 60% verminderd via Redis en Fusion Cache gelaagde cachingstrategie"
+  - "Robuuste integratietestingsuite gebouwd met 85%+ codedekking"
+  - "DDD en SOLID-principes toegepast voor een onderhoudbare, uitbreidbare codebase"
+  - "Kritieke integraties opgeleverd die Eneco's digitale transformatieroadmap mogelijk maakten"
 ---
 
 ## The Challenge

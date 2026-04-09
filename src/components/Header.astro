@@ -71,7 +71,6 @@ const navLinks = [
           title={`Switch to ${altLang === 'nl' ? 'Dutch' : 'English'}`}
           aria-label={`Switch language to ${altLang === 'nl' ? 'Nederlands' : 'English'}`}
         >
-          <span class="text-sm leading-none">{altLang === 'nl' ? '🇳🇱' : '🇬🇧'}</span>
           <span class="uppercase">{altLang}</span>
         </a>
 
@@ -135,7 +134,7 @@ const navLinks = [
       <div class="flex items-center gap-2 px-3 pt-3 border-t border-white/8 mt-2">
         <span class="text-xs font-bold text-primary uppercase px-2 py-1 rounded bg-primary/10 border border-primary/20">{lang}</span>
         <a href={altUrl} class="text-xs font-bold text-cool-gray uppercase px-2 py-1 rounded hover:bg-white/8 transition-colors">
-          {altLang === 'nl' ? '🇳🇱 NL' : '🇬🇧 EN'}
+          {altLang === 'nl' ? 'NL' : 'EN'}
         </a>
       </div>
     </div>

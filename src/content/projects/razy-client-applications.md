@@ -3,7 +3,9 @@ title: "7+ Client Applications — B2B Software Portfolio"
 company: "Razy Technology"
 period: "June 2015 – September 2018"
 role: "Software Engineer"
+roleNl: "Software Engineer"
 summary: "Designed and developed 7+ diverse B2B web applications across multiple industries including customer loyalty, medical practice management, automotive, and document archiving systems."
+summaryNl: "Ontworpen en ontwikkeld van 7+ diverse B2B-webapplicaties in meerdere sectoren, waaronder klantloyaliteit, medische praktijkbeheer, automotive en documentarchiveringsystemen."
 tech: ["ASP.NET MVC", "Web API", "C#", "SQL Server", "Entity Framework", "Kendo UI", "Telerik Reporting", "Firebase", "TypeScript", "SignalR", "jQuery"]
 featured: false
 category: "Full-Stack"
@@ -14,6 +16,12 @@ achievements:
   - "Developed Dentalore — dental practice management with appointment and billing systems"
   - "Created SOMA automotive platform for vehicle inspection and service tracking"
   - "Implemented real-time features using SignalR for live dashboards and notifications"
+achievementsNl:
+  - "7+ productieapplicaties opgeleverd voor echte zakelijke klanten in meerdere sectoren"
+  - "Klantloyaliteitsplatformen gebouwd (Majesty, Bticino, Encreez) met beloningspuntenbeheer"
+  - "Dentalore ontwikkeld — tandartspraktijkbeheer met afspraken en factureringssystemen"
+  - "SOMA automotive platform aangemaakt voor voertuigkeuring en serviceregistratie"
+  - "Real-time functies geïmplementeerd met SignalR voor live dashboards en meldingen"
 ---
 
 ## Overview

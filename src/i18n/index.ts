@@ -185,7 +185,7 @@ const ui = {
     // ─── Hero ─────────────────────────────────────────────────────────────────
     'hero.preheading': '// Senior Software Engineer & AI Integratiespecialist',
     'hero.heading': 'Ik bouw intelligente software die',
-    'hero.headingAccent': 'innovatie aanwakkert',
+    'hero.headingAccent': 'innovatie ontsteken',
     'hero.subheading': 'Senior .NET & AI Engineer met <strong>10+ jaar</strong> ervaring in het bouwen van robuuste bedrijfsoplossingen. Gespecialiseerd in AI-integratie, cloudarchitectuur en full-stack ontwikkeling.',
     'hero.ctaPrimary': 'Neem contact op',
     'hero.ctaSecondary': 'Bekijk mijn werk',
@@ -257,7 +257,7 @@ const ui = {
     // ─── About (full page) ────────────────────────────────────────────────────
     'about.page.title': 'Over Ahmed Ali — Senior .NET & AI Engineer | Vonkify',
     'about.page.desc': 'Leer Ahmed Ali kennen — een Senior Software Engineer uit Rotterdam met 10+ jaar enterprise-ervaring in .NET, AI-integratie, Angular, React en cloudarchitectuur.',
-    'about.journey.heading': 'Mijn weg',
+    'about.journey.heading': 'Mijn verhaal',
     'about.journey.p1': 'Geboren in Egypte, rondde ik mijn BSc Handelswetenschappen af aan de Universiteit van Mansoura (2008–2012) voordat ik mijn ware passie volgde: software engineering. In 2014-2015 behaalde ik een Professioneel Diploma Software Engineering aan het <strong>Information Technology Institute (ITI)</strong> — geaccrediteerd door het Egyptische Ministerie van Communicatie.',
     'about.journey.p2': 'Sindsdien heb ik 10+ jaar enterprise software gebouwd in de gezondheidszorg, energie, bouw, financiën en digitale sector. Mijn reis bracht me naar <strong>Nederland</strong>, waar ik werkte voor enkele van de meest prominente bedrijven van het land.',
     'about.journey.p3': 'Momenteel bouw ik bij <strong>iO Digital</strong> AI-platformen met Azure OpenAI, Amazon Bedrock en Google Gemini — inclusief enterprise middleware voor <strong>Eneco</strong>. Ik ga nu over naar <strong>volledig freelance</strong> om deze expertise direct aan klanten aan te bieden.',
@@ -268,7 +268,7 @@ const ui = {
     'about.cta.cv': 'Bekijk mijn CV',
     'about.ready': 'Klaar om samen te werken?',
     'about.ready.sub': 'Ik ben beschikbaar voor freelanceprojecten. Laten we bespreken hoe ik waarde kan toevoegen aan uw team.',
-    'about.quickfacts': 'Snelle feiten',
+    'about.quickfacts': 'In het kort',
     'about.download': 'CV downloaden (PDF)',
 
     // ─── Testimonials ─────────────────────────────────────────────────────────
@@ -299,7 +299,7 @@ const ui = {
     'contact.ph.name': 'Uw volledige naam',
     'contact.ph.email': 'uw@email.nl',
     'contact.ph.company': 'Naam van uw bedrijf',
-    'contact.ph.message': 'Vertel me over uw project, tijdlijn en wat u wilt bereiken...',
+    'contact.ph.message': 'Vertel mij over uw project, tijdlijn en wat u wilt bereiken...',
     'contact.ph.projectType': 'Selecteer type...',
     'contact.ph.budget': 'Selecteer budget...',
     'contact.submit': 'Bericht verzenden 🚀',

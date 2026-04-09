@@ -22,6 +22,9 @@ const t = useTranslations(lang);
       <div class="space-y-8">
         {EXPERIENCE.map((job, i) => {
           const isEven = i % 2 === 0;
+          const jobTitle = lang === 'nl' ? job.titleNl : job.title;
+          const jobLocation = lang === 'nl' ? job.locationNl : job.location;
+          const jobDescription = lang === 'nl' ? job.descriptionNl : job.description;
           return (
             <div class={`relative flex gap-6 sm:gap-0 reveal ${isEven ? 'sm:flex-row' : 'sm:flex-row-reverse'}`}>
               <div class={`flex-1 ${isEven ? 'sm:pr-10 sm:text-right' : 'sm:pl-10'}`}>
@@ -33,16 +36,16 @@ const t = useTranslations(lang);
                     </div>
                   )}
                   <div class="text-xs font-mono text-primary/80 mb-2">{job.period}</div>
-                  <h3 class="text-base font-bold text-text-light mb-0.5 group-hover:text-primary transition-colors">{job.title}</h3>
+                  <h3 class="text-base font-bold text-text-light mb-0.5 group-hover:text-primary transition-colors">{jobTitle}</h3>
                   <p class="text-sm font-semibold text-cool-gray mb-3">
                     {job.url !== '#' ? (
                       <a href={job.url} target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">{job.company}</a>
                     ) : (
                       job.company
                     )}
-                    <span class="font-normal ml-1">· {job.location}</span>
+                    <span class="font-normal ml-1">· {jobLocation}</span>
                   </p>
-                  <p class="text-sm text-cool-gray leading-relaxed mb-3">{job.description}</p>
+                  <p class="text-sm text-cool-gray leading-relaxed mb-3">{jobDescription}</p>
                   <p class="text-xs font-mono text-primary/70">{job.highlight}</p>
                 </div>
               </div>

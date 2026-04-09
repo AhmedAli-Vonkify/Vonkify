@@ -1,4 +1,6 @@
 ---
+import { useTranslations, type Lang } from '../i18n';
+
 export interface Props {
   slug: string;
   title: string;
@@ -11,6 +13,9 @@ export interface Props {
 }
 
 const { slug, title, company, period, summary, tech, category, featured = false } = Astro.props;
+const lang = (Astro.currentLocale ?? 'en') as Lang;
+const t = useTranslations(lang);
+const prefix = lang === 'nl' ? '/nl' : '';
 
 const categoryColors: Record<string, string> = {
   'AI & ML': 'text-accent border-accent/30 bg-accent/8',
@@ -52,11 +57,11 @@ const categoryStyle = categoryColors[category] ?? 'text-primary border-primary/3
 
   <!-- Link -->
   <a
-    href={`/projects/${slug}`}
+    href={`${prefix}/projects/${slug}`}
     class="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-accent transition-colors group/link mt-auto"
     aria-label={`View case study for ${title}`}
   >
-    View Case Study
+    {t('projects.viewCase')}
     <svg
       class="w-4 h-4 transition-transform group-hover/link:translate-x-1"
       fill="none"

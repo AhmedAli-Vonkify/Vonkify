@@ -4,6 +4,21 @@ import { useTranslations, type Lang } from '../i18n';
 
 const lang = (Astro.currentLocale ?? 'en') as Lang;
 const t = useTranslations(lang);
+
+const categoryNameNl: Record<string, string> = {
+  'Languages':      'Talen',
+  'Backend':        'Backend',
+  'Frontend':       'Frontend',
+  'AI & ML':        'AI & ML',
+  'Cloud & DevOps': 'Cloud & DevOps',
+  'Databases':      'Databases',
+  'Architecture':   'Architectuur',
+  'Testing':        'Testen',
+};
+
+function catName(name: string) {
+  return lang === 'nl' ? (categoryNameNl[name] ?? name) : name;
+}
 ---
 
 <section id="skills" class="section-light dark:section-dark py-24 px-4">
@@ -37,7 +52,7 @@ const t = useTranslations(lang);
         <div class="reveal bg-white dark:bg-navy-light/40 border border-gray-100 dark:border-white/8 rounded-xl p-5 hover:border-primary/25 transition-all duration-300">
           <div class="flex items-center gap-2 mb-4">
             <div class="w-1.5 h-5 bg-gradient-to-b from-primary to-accent rounded-full" />
-            <h3 class="text-sm font-bold text-near-black dark:text-text-light uppercase tracking-wide">{cat.name}</h3>
+            <h3 class="text-sm font-bold text-near-black dark:text-text-light uppercase tracking-wide">{catName(cat.name)}</h3>
           </div>
           <div class="flex flex-wrap gap-1.5">
             {cat.items.map((item) => (

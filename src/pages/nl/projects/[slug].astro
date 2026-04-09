@@ -1,0 +1,54 @@
+---
+import { getCollection, render } from 'astro:content';
+import ProjectLayout from '../../../layouts/ProjectLayout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  const nlProjects = await getCollection('projectsNl');
+  const nlMap = new Map(nlProjects.map((p) => [p.id, p]));
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project, nlProject: nlMap.get(project.id) ?? null },
+  }));
+}
+
+const { project, nlProject } = Astro.props;
+
+const { Content: EnContent } = await render(project);
+const NlResult = nlProject ? await render(nlProject) : null;
+const NlContent = NlResult?.Content ?? null;
+
+const { title, company, period, role, roleNl, summary, summaryNl, tech, category, achievements, achievementsNl } = project.data;
+const displayAchievements = achievementsNl ?? achievements;
+---
+
+<ProjectLayout
+  title={title}
+  company={company}
+  period={period}
+  role={role}
+  roleNl={roleNl}
+  summary={summary}
+  summaryNl={summaryNl}
+  tech={tech}
+  category={category}
+>
+  {displayAchievements && displayAchievements.length > 0 && (
+    <div class="not-prose mb-10 glass-card rounded-2xl p-6 border border-primary/20">
+      <h2 class="text-base font-bold text-text-light mb-4 flex items-center gap-2.5">
+        <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-primary/15 text-primary text-sm">⚡</span>
+        Belangrijkste resultaten
+      </h2>
+      <ul class="space-y-2.5">
+        {displayAchievements.map((item) => (
+          <li class="flex items-start gap-3 text-sm text-cool-gray leading-relaxed">
+            <span class="flex-shrink-0 mt-0.5 w-4 h-4 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary text-[10px] font-bold">✓</span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+
+  {NlContent ? <NlContent /> : <EnContent />}
+</ProjectLayout>

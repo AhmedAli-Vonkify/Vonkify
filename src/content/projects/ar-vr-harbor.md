@@ -4,7 +4,9 @@ company: "ICT Group"
 companyUrl: "https://www.ictgroup.eu"
 period: "September 2018 – September 2020"
 role: "Unity 3D Developer"
+roleNl: "Unity 3D Developer"
 summary: "Immersive AR/VR application for real-time harbor management, giving harbor managers a virtual bird's-eye view of all port activities, vessel positions, and logistics operations in real-time."
+summaryNl: "Meeslepende AR/VR-applicatie voor real-time havenbeheer, waarmee havenmanagers een virtueel vogelperspectief krijgen op alle havenactiviteiten, scheepsposities en logistieke operaties."
 tech: ["C#", "Unity 3D", "Vuforia", "AR", "VR", "Real-time data", "3D modeling"]
 featured: false
 category: "Full-Stack"
@@ -14,6 +16,11 @@ achievements:
   - "Augmented Reality overlays using Vuforia for on-site inspection workflows"
   - "Interactive VR environment allowing managers to 'walk' the harbor virtually"
   - "Integration with harbor management systems for live berth occupancy data"
+achievementsNl:
+  - "Real-time 3D-havenvisualisatie gebouwd met live scheepsvolging"
+  - "Augmented Reality overlays via Vuforia voor inspectieworkflows op locatie"
+  - "Interactieve VR-omgeving waarmee managers virtueel door de haven kunnen lopen"
+  - "Integratie met havenbeheerssystemen voor live ligplaatsbezettingsdata"
 ---
 
 ## Overview

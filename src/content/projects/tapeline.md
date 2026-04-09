@@ -4,7 +4,9 @@ company: "Heijmans"
 companyUrl: "https://www.heijmans.nl"
 period: "September 2021 – September 2022"
 role: "Senior Developer / Solution Architect"
+roleNl: "Senior Developer / Oplossingsarchitect"
 summary: "Internal web application monitoring road obstructions from Heijmans construction sites in real-time, communicating data to external navigation platforms including Waze to help drivers avoid delays."
+summaryNl: "Interne webapplicatie voor real-time monitoring van wegobstructies van Heijmans bouwplaatsen, die data communiceert naar externe navigatieplatformen waaronder Waze om automobilisten te helpen files te vermijden."
 tech: ["C#", "ASP.NET Core", "Angular", "TypeScript", "DDD", "Onion Architecture", "TDD", "MediatR", "Entity Framework Core", "SQL Server", "Terraform", "Azure Table Storage", "Azure Functions", "NgRx", "RxJS", "ECharts", "Azure Maps", "Redux"]
 featured: true
 featuredOrder: 3
@@ -16,6 +18,12 @@ achievements:
   - "Mentored 3 junior developers through code reviews, pair programming, and architecture sessions"
   - "Delivered Waze integration enabling real-time road obstruction data for thousands of drivers"
   - "Implemented Azure Maps integration for geospatial road monitoring dashboards"
+achievementsNl:
+  - "Architectuurbeslissingen geleid met Domain-Driven Design en Onion Architecture patronen"
+  - "Test-Driven Development geïntroduceerd — van 0% naar 75%+ testdekking"
+  - "3 junior developers gecoacht via code reviews, pair programming en architectuursessies"
+  - "Waze-integratie opgeleverd voor real-time wegobstructiedata voor duizenden automobilisten"
+  - "Azure Maps-integratie geïmplementeerd voor geospatiale wegmonitoringdashboards"
 ---
 
 ## The Challenge

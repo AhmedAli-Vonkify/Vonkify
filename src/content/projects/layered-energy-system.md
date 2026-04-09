@@ -4,7 +4,9 @@ company: "ICT Group / Stedin"
 companyUrl: "https://www.stedin.net"
 period: "November 2018 – September 2019"
 role: "Software Engineer"
+roleNl: "Software Engineer"
 summary: "Market solution for a local energy community using Ethereum blockchain, enabling peer-to-peer energy trading and preventing grid congestion through intelligent flex management for Dutch grid operator Stedin."
+summaryNl: "Marktoplossing voor een lokale energiegemeenschap via Ethereum blockchain, die peer-to-peer energiehandel mogelijk maakt en netcongestie voorkomt via intelligent flexbeheer voor Nederlandse netbeheerder Stedin."
 tech: ["C#", "ASP.NET Core", "Blockchain", "Ethereum", "Nethereum", "Azure Functions", "Azure Logic Apps", "Unit Testing", "Entity Framework Core", "USEF Framework"]
 featured: true
 featuredOrder: 4
@@ -15,6 +17,11 @@ achievements:
   - "Built congestion prevention algorithms based on the USEF (Universal Smart Energy Framework)"
   - "Created Azure Functions for automated flex management and demand-response events"
   - "Implemented peer-to-peer energy trading mechanism for local community members"
+achievementsNl:
+  - "Blockchain-integratielaag ontworpen en gebouwd met Nethereum en Ethereum smart contracts"
+  - "Congestiepreventie-algoritmen gebouwd op basis van het USEF (Universal Smart Energy Framework)"
+  - "Azure Functions aangemaakt voor geautomatiseerd flexbeheer en vraagresponse-events"
+  - "Peer-to-peer energiehandelmechanisme geïmplementeerd voor lokale gemeenschapsleden"
 ---
 
 ## The Challenge
