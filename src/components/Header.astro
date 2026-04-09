@@ -1,5 +1,19 @@
 ---
-import { NAV_LINKS, SITE, AVAILABILITY } from '../utils/constants';
+import { SITE, AVAILABILITY } from '../utils/constants';
+import { useTranslations, getAlternateLangUrl, type Lang } from '../i18n';
+
+const lang = (Astro.currentLocale ?? 'en') as Lang;
+const t = useTranslations(lang);
+const altLang = lang === 'en' ? 'nl' : 'en';
+const altUrl = getAlternateLangUrl(lang, Astro.url.pathname);
+
+const prefix = lang === 'nl' ? '/nl' : '';
+const navLinks = [
+  { href: `${prefix}/#services`, label: t('nav.services') },
+  { href: `${prefix}/projects`, label: t('nav.projects') },
+  { href: `${prefix}/about`, label: t('nav.about') },
+  { href: `${prefix}/contact`, label: t('nav.contact') },
+];
 ---
 
 <header
@@ -8,17 +22,12 @@ import { NAV_LINKS, SITE, AVAILABILITY } from '../utils/constants';
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 md:h-18">
+
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-2.5 group flex-shrink-0" aria-label="Vonkify Home">
+      <a href={lang === 'nl' ? '/nl/' : '/'} class="flex items-center gap-2.5 group flex-shrink-0" aria-label="Vonkify Home">
         <div class="logo-spark w-8 h-8 rounded-md flex items-center justify-center">
           <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7">
-            <path
-              d="M20 3L7 17.5H15.5L13 29L27 13H18L20 3Z"
-              fill="#FF6B00"
-              stroke="#FFB800"
-              stroke-width="0.5"
-              stroke-linejoin="round"
-            />
+            <path d="M20 3L7 17.5H15.5L13 29L27 13H18L20 3Z" fill="#FF6B00" stroke="#FFB800" stroke-width="0.5" stroke-linejoin="round" />
           </svg>
         </div>
         <span class="font-brand font-semibold text-xl text-text-light tracking-tight">vonkify</span>
@@ -27,7 +36,7 @@ import { NAV_LINKS, SITE, AVAILABILITY } from '../utils/constants';
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center gap-8" aria-label="Main navigation">
         {
-          NAV_LINKS.map((link) => (
+          navLinks.map((link) => (
             <a
               href={link.href}
               class="text-sm font-medium text-cool-gray hover:text-text-light transition-colors duration-200 relative group"
@@ -39,33 +48,48 @@ import { NAV_LINKS, SITE, AVAILABILITY } from '../utils/constants';
         }
       </nav>
 
-      <!-- Right side: availability + theme toggle + mobile menu -->
-      <div class="flex items-center gap-3">
+      <!-- Right side -->
+      <div class="flex items-center gap-2.5">
+
         <!-- Availability badge -->
         {
           AVAILABILITY.isAvailable && (
             <a
-              href="/contact"
-              class="hidden sm:flex items-center gap-2 text-xs font-semibold text-success hover:text-success/80 transition-colors bg-success/10 border border-success/20 px-3 py-1.5 rounded-full"
+              href={`${prefix}/contact`}
+              class="hidden sm:flex items-center gap-1.5 text-xs font-semibold text-success hover:text-success/80 transition-colors bg-success/10 border border-success/20 px-3 py-1.5 rounded-full"
             >
               <span class="w-1.5 h-1.5 bg-success rounded-full animate-pulse" />
-              Available
+              {t('nav.available')}
             </a>
           )
         }
 
-        <!-- Theme toggle -->
+        <!-- Language switcher -->
+        <a
+          href={altUrl}
+          class="hidden sm:flex items-center gap-1.5 text-xs font-bold px-2.5 py-1.5 rounded-lg bg-white/8 hover:bg-white/15 transition-colors text-cool-gray hover:text-text-light border border-white/5"
+          title={`Switch to ${altLang === 'nl' ? 'Dutch' : 'English'}`}
+          aria-label={`Switch language to ${altLang === 'nl' ? 'Nederlands' : 'English'}`}
+        >
+          <span class="text-sm leading-none">{altLang === 'nl' ? '🇳🇱' : '🇬🇧'}</span>
+          <span class="uppercase">{altLang}</span>
+        </a>
+
+        <!-- Active lang indicator (desktop) -->
+        <span class="hidden sm:flex items-center text-xs font-bold px-2.5 py-1.5 rounded-lg bg-primary/10 border border-primary/20 text-primary uppercase">
+          {lang}
+        </span>
+
+        <!-- Dark mode toggle -->
         <button
           id="theme-toggle"
           class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/8 hover:bg-white/15 transition-colors text-cool-gray hover:text-text-light"
           aria-label="Toggle dark/light mode"
         >
-          <!-- Sun (shown in dark mode) -->
           <svg id="icon-sun" class="w-4.5 h-4.5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="5" />
             <path stroke-linecap="round" d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
           </svg>
-          <!-- Moon (shown in light mode) -->
           <svg id="icon-moon" class="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
           </svg>
@@ -90,40 +114,35 @@ import { NAV_LINKS, SITE, AVAILABILITY } from '../utils/constants';
   </div>
 
   <!-- Mobile menu -->
-  <div
-    id="mobile-menu"
-    class="md:hidden hidden bg-navy border-t border-white/8"
-    role="navigation"
-    aria-label="Mobile navigation"
-  >
+  <div id="mobile-menu" class="md:hidden hidden bg-navy border-t border-white/8">
     <div class="px-4 py-5 space-y-1">
       {
-        NAV_LINKS.map((link) => (
-          <a
-            href={link.href}
-            class="block px-3 py-2.5 text-sm font-medium text-cool-gray hover:text-text-light hover:bg-white/5 rounded-lg transition-all"
-          >
+        navLinks.map((link) => (
+          <a href={link.href} class="block px-3 py-2.5 text-sm font-medium text-cool-gray hover:text-text-light hover:bg-white/5 rounded-lg transition-all">
             {link.label}
           </a>
         ))
       }
       {
         AVAILABILITY.isAvailable && (
-          <a
-            href="/contact"
-            class="flex items-center gap-2 px-3 py-2.5 text-sm font-semibold text-success hover:bg-success/5 rounded-lg transition-all"
-          >
+          <a href={`${prefix}/contact`} class="flex items-center gap-2 px-3 py-2.5 text-sm font-semibold text-success hover:bg-success/5 rounded-lg transition-all">
             <span class="w-1.5 h-1.5 bg-success rounded-full animate-pulse" />
-            Available for Projects
+            {t('nav.availableFull')}
           </a>
         )
       }
+      <!-- Mobile lang switcher -->
+      <div class="flex items-center gap-2 px-3 pt-3 border-t border-white/8 mt-2">
+        <span class="text-xs font-bold text-primary uppercase px-2 py-1 rounded bg-primary/10 border border-primary/20">{lang}</span>
+        <a href={altUrl} class="text-xs font-bold text-cool-gray uppercase px-2 py-1 rounded hover:bg-white/8 transition-colors">
+          {altLang === 'nl' ? '🇳🇱 NL' : '🇬🇧 EN'}
+        </a>
+      </div>
     </div>
   </div>
 </header>
 
 <script>
-  // Mobile menu toggle
   const menuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   const openIcon = document.getElementById('menu-open-icon');
@@ -137,7 +156,6 @@ import { NAV_LINKS, SITE, AVAILABILITY } from '../utils/constants';
     menuBtn.setAttribute('aria-expanded', String(!isHidden));
   });
 
-  // Close mobile menu on link click
   mobileMenu?.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       mobileMenu.classList.add('hidden');
@@ -168,10 +186,7 @@ import { NAV_LINKS, SITE, AVAILABILITY } from '../utils/constants';
   // Header scroll shadow
   const header = document.getElementById('site-header');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      header?.classList.add('shadow-lg', 'shadow-black/20');
-    } else {
-      header?.classList.remove('shadow-lg', 'shadow-black/20');
-    }
+    header?.classList.toggle('shadow-lg', window.scrollY > 10);
+    header?.classList.toggle('shadow-black/20', window.scrollY > 10);
   });
 </script>

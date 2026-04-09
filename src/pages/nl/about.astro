@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE, EXPERIENCE, TECH_CATEGORIES } from '../../utils/constants';
+import { useTranslations } from '../../i18n';
+
+const t = useTranslations('nl');
+---
+
+<BaseLayout title={t('about.page.title')} description={t('about.page.desc')}>
+  <Header />
+
+  <main class="pt-20">
+    <section class="section-dark py-20 px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 mb-5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono">
+          {t('about.chip')}
+        </div>
+        <h1 class="section-heading text-text-light mb-4">Ahmed Ali</h1>
+        <p class="text-xl text-cool-gray">Senior Software Engineer · AI Integratiespecialist · Freelancer</p>
+      </div>
+    </section>
+
+    <section class="section-light dark:section-dark py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div class="lg:col-span-1 reveal-left">
+            <div class="sticky top-28">
+              <div class="aspect-square rounded-2xl bg-gradient-to-br from-navy-light to-navy border border-white/10 flex items-center justify-center mb-6 relative overflow-hidden">
+                <div class="absolute inset-0 opacity-20" style="background: radial-gradient(circle at 30% 30%, #FF6B00, transparent 60%);" />
+                <div class="text-center relative z-10">
+                  <div class="text-8xl mb-3">👨‍💻</div>
+                  <p class="text-xs text-cool-gray font-mono px-4">// foto komt binnenkort</p>
+                </div>
+              </div>
+              <div class="space-y-3 bg-white dark:bg-navy-light/50 border border-gray-100 dark:border-white/8 rounded-xl p-5">
+                <h3 class="text-sm font-bold text-near-black dark:text-text-light uppercase tracking-wide mb-4">{t('about.quickfacts')}</h3>
+                {[
+                  { icon: '📍', label: 'Locatie', value: 'Rotterdam, Nederland' },
+                  { icon: '🌐', label: 'Talen', value: 'Engels (Uitstekend) · Nederlands (A2)' },
+                  { icon: '🎓', label: 'Opleiding', value: 'BSc Handel + ITI Diploma' },
+                  { icon: '🗓️', label: 'Ervaring', value: '10+ Jaar' },
+                  { icon: '🤝', label: 'Werkvorm', value: 'Remote & Hybride in NL' },
+                  { icon: '🏅', label: 'Certificeringen', value: 'Gecertificeerd Scrum Master' },
+                ].map((fact) => (
+                  <div class="flex items-start gap-2.5">
+                    <span class="text-base mt-0.5">{fact.icon}</span>
+                    <div>
+                      <p class="text-xs text-cool-gray">{fact.label}</p>
+                      <p class="text-sm font-medium text-near-black dark:text-text-light">{fact.value}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div class="mt-4">
+                <a href="/ahmed-ali-cv.pdf" download class="btn-primary w-full justify-center">
+                  {t('about.download')}
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-2 space-y-10 reveal-right">
+            <div>
+              <h2 class="text-2xl font-bold text-near-black dark:text-text-light mb-5 flex items-center gap-2">
+                <span class="text-primary">//</span> {t('about.journey.heading')}
+              </h2>
+              <div class="space-y-4 text-cool-gray leading-relaxed">
+                <p set:html={t('about.journey.p1')} />
+                <p set:html={t('about.journey.p2')} />
+                <p set:html={t('about.journey.p3')} />
+              </div>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold text-near-black dark:text-text-light mb-5 flex items-center gap-2">
+                <span class="text-primary">//</span> {t('about.philosophy.heading')}
+              </h2>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { icon: '🧹', title: 'Schone code eerst', desc: 'Code wordt veel vaker gelezen dan geschreven. Ik prioriteer duidelijkheid, SOLID-principes en onderhoudbaarheid.' },
+                  { icon: '🧪', title: 'Test-Driven Development', desc: 'TDD is niet alleen een praktijk — het is een ontwerpfilosofie die leidt tot betere architectuur.' },
+                  { icon: '📚', title: 'Continu leren', desc: 'Het technologielandschap evolueert snel. Ik verken actief AI, cloud en opkomende patronen.' },
+                  { icon: '🤝', title: 'Kennisdeling', desc: 'Geweldige teams groeien samen. Ik mentor, pair-program en geef interne trainingssessies.' },
+                ].map((item) => (
+                  <div class="bg-white dark:bg-navy-light/40 border border-gray-100 dark:border-white/8 rounded-xl p-5">
+                    <div class="text-2xl mb-3">{item.icon}</div>
+                    <h3 class="font-bold text-near-black dark:text-text-light mb-2">{item.title}</h3>
+                    <p class="text-sm text-cool-gray leading-relaxed">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold text-near-black dark:text-text-light mb-5 flex items-center gap-2">
+                <span class="text-primary">//</span> {t('about.focus.heading')}
+              </h2>
+              <div class="space-y-3">
+                {[
+                  'AI-applicaties bouwen met RAG, LLM-chaining en agent-patronen in productie',
+                  'Cloud-native .NET architecturen op Azure met Terraform IaC',
+                  'Multi-provider LLM integraties (Azure OpenAI, Bedrock, Gemini)',
+                  'Bijdragen aan de Nederlandse freelance tech-markt als senior AI/backend specialist',
+                ].map((focus) => (
+                  <div class="flex items-start gap-3 text-sm text-cool-gray">
+                    <span class="text-primary mt-1 flex-shrink-0">▸</span>
+                    {focus}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold text-near-black dark:text-text-light mb-5 flex items-center gap-2">
+                <span class="text-primary">//</span> {t('about.fun.heading')}
+              </h2>
+              <div class="flex flex-wrap gap-3">
+                {['🎮 Unity 3D & VR', '⛓️ Blockchain (Ethereum)', '🏗️ Architectuur enthousiasteling', '🇳🇱 Nederlands leren', '🔋 Energietech fan', '📡 AR/VR verkenner'].map((fact) => (
+                  <span class="text-sm px-4 py-2 bg-white dark:bg-navy-light/40 border border-gray-100 dark:border-white/8 rounded-full text-cool-gray">{fact}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark py-16 px-4 text-center">
+      <h2 class="text-2xl font-bold text-text-light mb-4">{t('about.ready')}</h2>
+      <p class="text-cool-gray mb-8 max-w-xl mx-auto">{t('about.ready.sub')}</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/nl/contact" class="btn-primary">{t('about.cta.hire')}</a>
+        <a href="/nl/cv" class="btn-secondary">{t('about.cta.cv')}</a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
