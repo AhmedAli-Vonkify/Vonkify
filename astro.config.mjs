@@ -5,7 +5,9 @@ import tailwindcss from '@tailwindcss/vite';
 import vercel from '@astrojs/vercel';
 
 export default defineConfig({
-  adapter: vercel(),
+  adapter: vercel({
+    webAnalytics: { enabled: true }
+  }),
   site: 'https://vonkify.nl',
   i18n: {
     defaultLocale: 'en',
