@@ -1,7 +1,7 @@
 export const SITE = {
   title: 'Vonkify — Senior .NET & AI Engineer | Freelance Developer Netherlands',
   description:
-    'Ahmed Ali — Senior Software Engineer with 10+ years experience. Specializing in .NET, AI Integration (Azure OpenAI, RAG), Angular, React & Cloud Architecture. Available for freelance projects in the Netherlands.',
+    'Ahmed Ali — Senior Software Engineer with 11+ years experience. Specializing in .NET, AI Integration (Azure OpenAI, RAG), Angular, React & Cloud Architecture. Available for freelance projects in the Netherlands.',
   url: 'https://vonkify.nl',
   name: 'Vonkify',
   tagline: 'Sparking Digital Innovation',
@@ -10,7 +10,7 @@ export const SITE = {
   phone: '+31 6 33 252 892',
   location: 'Rotterdam, Netherlands',
   linkedin: 'https://www.linkedin.com/in/ahmed-ali-vonkify',
-  github: 'https://github.com/AhmedSameh2020',
+  github: 'https://github.com/AhmedAli-Vonkify',
   defaultOgImage: '/og-image.png',
 };
 
@@ -21,7 +21,7 @@ export const AVAILABILITY = {
 };
 
 export const STATS = [
-  { value: '10+', label: 'Years Experience' },
+  { value: '11+', label: 'Years Experience' },
   { value: '7+', label: 'Enterprise Projects' },
   { value: '5', label: 'Companies Served' },
   { value: '69', label: 'Technical Skills' },

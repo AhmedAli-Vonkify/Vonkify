@@ -15,7 +15,7 @@ const ui = {
     'hero.preheading': '// Senior Software Engineer & AI Integration Specialist',
     'hero.heading': 'I build intelligent software that',
     'hero.headingAccent': 'sparks innovation',
-    'hero.subheading': 'Senior .NET & AI Engineer with <strong>10+ years</strong> of experience crafting robust enterprise solutions. Specializing in AI Integration, Cloud Architecture, and Full-Stack Development.',
+    'hero.subheading': 'Senior .NET & AI Engineer with <strong>11+ years</strong> of experience crafting robust enterprise solutions. Specializing in AI Integration, Cloud Architecture, and Full-Stack Development.',
     'hero.ctaPrimary': "Let's Talk",
     'hero.ctaSecondary': 'View My Work',
     'hero.availability': 'Available for Freelance Projects',
@@ -68,13 +68,13 @@ const ui = {
     // ─── Timeline ─────────────────────────────────────────────────────────────
     'timeline.chip': '// Career Journey',
     'timeline.heading': 'Experience',
-    'timeline.subheading': '10+ years building enterprise software across healthcare, energy, construction, finance, and AI sectors.',
+    'timeline.subheading': '11+ years building enterprise software across healthcare, energy, construction, finance, and AI sectors.',
     'timeline.current': 'Current Position',
 
     // ─── About (homepage brief) ───────────────────────────────────────────────
     'about.chip': '// About Me',
     'about.heading': 'About Ahmed',
-    'about.p1': "I'm a Senior Software Engineer with over <strong>10 years</strong> of experience building enterprise-grade solutions. Based in <strong>Rotterdam, Netherlands</strong>, I specialize in bridging cutting-edge AI technology with robust software architecture.",
+    'about.p1': "I'm a Senior Software Engineer with over <strong>11 years</strong> of experience building enterprise-grade solutions. Based in <strong>Rotterdam, Netherlands</strong>, I specialize in bridging cutting-edge AI technology with robust software architecture.",
     'about.p2': "Currently at <strong>iO Digital</strong>, I build AI-powered workspaces using Azure OpenAI, Amazon Bedrock, and Google Gemini. My passion lies in making complex technology accessible and delivering solutions that create real business value.",
     'about.p3': "As a full-stack developer, I bring both backend depth (.NET, C#, cloud architecture) and frontend polish (Angular, React) to every project — plus a strong commitment to clean code, TDD, and knowledge sharing.",
     'about.cta': 'Read More About Me',
@@ -85,10 +85,10 @@ const ui = {
 
     // ─── About (full page) ────────────────────────────────────────────────────
     'about.page.title': 'About Ahmed Ali — Senior .NET & AI Engineer | Vonkify',
-    'about.page.desc': 'Learn about Ahmed Ali — a Senior Software Engineer from Rotterdam with 10+ years of enterprise experience in .NET, AI integration, Angular, React, and cloud architecture.',
+    'about.page.desc': 'Learn about Ahmed Ali — a Senior Software Engineer from Rotterdam with 11+ years of enterprise experience in .NET, AI integration, Angular, React, and cloud architecture.',
     'about.journey.heading': 'My Journey',
     'about.journey.p1': 'Born in Egypt, I completed my BSc in Commerce at Mansoura University (2008–2012) before pivoting to follow my true passion: software engineering. I earned a Professional Diploma in Software Engineering from the <strong>Information Technology Institute (ITI)</strong> — accredited by Egypt\'s Ministry of Communications — in 2014-2015.',
-    'about.journey.p2': "Since then, I've spent 10+ years building enterprise software across healthcare, energy, construction, finance, and digital sectors. My journey brought me to <strong>the Netherlands</strong>, where I've worked with some of the country's most notable companies.",
+    'about.journey.p2': "Since then, I've spent 11+ years building enterprise software across healthcare, energy, construction, finance, and digital sectors. My journey brought me to <strong>the Netherlands</strong>, where I've worked with some of the country's most notable companies.",
     'about.journey.p3': "Today at <strong>iO Digital</strong>, I build AI-powered platforms using Azure OpenAI, Amazon Bedrock, and Google Gemini — including enterprise middleware for <strong>Eneco</strong>, one of the Netherlands' leading energy companies. I'm now transitioning to <strong>full freelance</strong> to bring this expertise directly to clients.",
     'about.philosophy.heading': 'My Philosophy',
     'about.focus.heading': 'Current Focus',
@@ -164,7 +164,7 @@ const ui = {
     'cv.print': 'Print',
     'cv.available': 'Available for Freelance',
     'cv.summary.heading': 'Professional Summary',
-    'cv.summary.text': 'Experienced Software Engineer with over 10 years in programming and technology engineering. Skilled in full-stack development, cloud technologies, and AI integration. Proven track record building robust enterprise applications across healthcare, energy, construction, finance, and digital sectors in the Netherlands. Strong problem-solving abilities and leadership skills with a commitment to clean code, TDD, and knowledge sharing.',
+    'cv.summary.text': 'Experienced Software Engineer with over 11 years in programming and technology engineering. Skilled in full-stack development, cloud technologies, and AI integration. Proven track record building robust enterprise applications across healthcare, energy, construction, finance, and digital sectors in the Netherlands. Strong problem-solving abilities and leadership skills with a commitment to clean code, TDD, and knowledge sharing.',
     'cv.experience': 'Work Experience',
     'cv.education': 'Education',
     'cv.skills': 'Technical Skills',
@@ -186,7 +186,7 @@ const ui = {
     'hero.preheading': '// Senior Software Engineer & AI Integratiespecialist',
     'hero.heading': 'Ik bouw intelligente software die',
     'hero.headingAccent': 'innovatie ontsteken',
-    'hero.subheading': 'Senior .NET & AI Engineer met <strong>10+ jaar</strong> ervaring in het bouwen van robuuste bedrijfsoplossingen. Gespecialiseerd in AI-integratie, cloudarchitectuur en full-stack ontwikkeling.',
+    'hero.subheading': 'Senior .NET & AI Engineer met <strong>11+ jaar</strong> ervaring in het bouwen van robuuste bedrijfsoplossingen. Gespecialiseerd in AI-integratie, cloudarchitectuur en full-stack ontwikkeling.',
     'hero.ctaPrimary': 'Neem contact op',
     'hero.ctaSecondary': 'Bekijk mijn werk',
     'hero.availability': 'Beschikbaar voor freelanceprojecten',
@@ -239,7 +239,7 @@ const ui = {
     // ─── Timeline ─────────────────────────────────────────────────────────────
     'timeline.chip': '// Loopbaanoverzicht',
     'timeline.heading': 'Werkervaring',
-    'timeline.subheading': '10+ jaar enterprise software bouwen in de gezondheidszorg, energie, bouw, financiën en AI-sector.',
+    'timeline.subheading': '11+ jaar enterprise software bouwen in de gezondheidszorg, energie, bouw, financiën en AI-sector.',
     'timeline.current': 'Huidige functie',
 
     // ─── About (homepage brief) ───────────────────────────────────────────────
@@ -256,10 +256,10 @@ const ui = {
 
     // ─── About (full page) ────────────────────────────────────────────────────
     'about.page.title': 'Over Ahmed Ali — Senior .NET & AI Engineer | Vonkify',
-    'about.page.desc': 'Leer Ahmed Ali kennen — een Senior Software Engineer uit Rotterdam met 10+ jaar enterprise-ervaring in .NET, AI-integratie, Angular, React en cloudarchitectuur.',
+    'about.page.desc': 'Leer Ahmed Ali kennen — een Senior Software Engineer uit Rotterdam met 11+ jaar enterprise-ervaring in .NET, AI-integratie, Angular, React en cloudarchitectuur.',
     'about.journey.heading': 'Mijn verhaal',
     'about.journey.p1': 'Geboren in Egypte, rondde ik mijn BSc Handelswetenschappen af aan de Universiteit van Mansoura (2008–2012) voordat ik mijn ware passie volgde: software engineering. In 2014-2015 behaalde ik een Professioneel Diploma Software Engineering aan het <strong>Information Technology Institute (ITI)</strong> — geaccrediteerd door het Egyptische Ministerie van Communicatie.',
-    'about.journey.p2': 'Sindsdien heb ik 10+ jaar enterprise software gebouwd in de gezondheidszorg, energie, bouw, financiën en digitale sector. Mijn reis bracht me naar <strong>Nederland</strong>, waar ik werkte voor enkele van de meest prominente bedrijven van het land.',
+    'about.journey.p2': 'Sindsdien heb ik 11+ jaar enterprise software gebouwd in de gezondheidszorg, energie, bouw, financiën en digitale sector. Mijn reis bracht me naar <strong>Nederland</strong>, waar ik werkte voor enkele van de meest prominente bedrijven van het land.',
     'about.journey.p3': 'Momenteel bouw ik bij <strong>iO Digital</strong> AI-platformen met Azure OpenAI, Amazon Bedrock en Google Gemini — inclusief enterprise middleware voor <strong>Eneco</strong>. Ik ga nu over naar <strong>volledig freelance</strong> om deze expertise direct aan klanten aan te bieden.',
     'about.philosophy.heading': 'Mijn filosofie',
     'about.focus.heading': 'Huidige focus',
