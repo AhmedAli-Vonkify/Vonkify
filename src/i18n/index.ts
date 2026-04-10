@@ -245,7 +245,7 @@ const ui = {
     // ─── About (homepage brief) ───────────────────────────────────────────────
     'about.chip': '// Over mij',
     'about.heading': 'Over Ahmed',
-    'about.p1': 'Ik ben een Senior Software Engineer met meer dan <strong>10 jaar</strong> ervaring in het bouwen van enterprise-oplossingen. Gevestigd in <strong>Rotterdam, Nederland</strong>, specialiseer ik me in het verbinden van geavanceerde AI-technologie met robuuste softwarearchitectuur.',
+    'about.p1': 'Ik ben een Senior Software Engineer met meer dan <strong>11 jaar</strong> ervaring in het bouwen van enterprise-oplossingen. Gevestigd in <strong>Rotterdam, Nederland</strong>, specialiseer ik me in het verbinden van geavanceerde AI-technologie met robuuste softwarearchitectuur.',
     'about.p2': 'Momenteel werk ik bij <strong>iO Digital</strong>, waar ik AI-werkruimten bouw met Azure OpenAI, Amazon Bedrock en Google Gemini. Mijn passie ligt in het toegankelijk maken van complexe technologie en het leveren van oplossingen die echte bedrijfswaarde creëren.',
     'about.p3': 'Als full-stack developer combineer ik backend-diepgang (.NET, C#, cloudarchitectuur) met frontend-finesse (Angular, React) — aangevuld met een sterke toewijding aan schone code, TDD en kennisdeling.',
     'about.cta': 'Lees meer over mij',
@@ -335,7 +335,7 @@ const ui = {
     'cv.print': 'Afdrukken',
     'cv.available': 'Beschikbaar voor freelance',
     'cv.summary.heading': 'Professionele samenvatting',
-    'cv.summary.text': 'Ervaren Software Engineer met meer dan 10 jaar ervaring in programmeren en technologie-engineering. Bedreven in full-stack ontwikkeling, cloudtechnologieën en AI-integratie. Bewezen staat van dienst in het bouwen van robuuste enterprise-applicaties in de gezondheidszorg, energie, bouw, financiën en digitale sector in Nederland. Sterke probleemoplossende vaardigheden en leiderschapskwaliteiten met een toewijding aan schone code, TDD en kennisdeling.',
+    'cv.summary.text': 'Ervaren Software Engineer met meer dan 11 jaar ervaring in programmeren en technologie-engineering. Bedreven in full-stack ontwikkeling, cloudtechnologieën en AI-integratie. Bewezen staat van dienst in het bouwen van robuuste enterprise-applicaties in de gezondheidszorg, energie, bouw, financiën en digitale sector in Nederland. Sterke probleemoplossende vaardigheden en leiderschapskwaliteiten met een toewijding aan schone code, TDD en kennisdeling.',
     'cv.experience': 'Werkervaring',
     'cv.education': 'Opleiding',
     'cv.skills': 'Technische vaardigheden',
