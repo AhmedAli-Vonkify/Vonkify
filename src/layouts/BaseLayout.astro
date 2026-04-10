@@ -1,6 +1,7 @@
 ---
 import { SITE } from '../utils/constants';
 import '../styles/global.css';
+import { Analytics } from '@vercel/analytics/astro';
 
 export interface Props {
   title?: string;
@@ -106,6 +107,7 @@ const ogImageURL = new URL(image, SITE.url);
   </head>
   <body class="bg-off-white dark:bg-navy text-near-black dark:text-text-light font-sans antialiased">
     <slot />
+    <Analytics />
 
     <!-- Scroll reveal observer -->
     <script is:inline>
